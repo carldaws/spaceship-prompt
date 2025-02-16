@@ -38,6 +38,8 @@ spaceship_ruby() {
   elif spaceship::exists asdf; then
     # split output on space and return second element
     ruby_version=${$(asdf current ruby)[2]}
+  elif spaceship::exists ruby; then
+    ruby_version=${$(ruby -v 2>/dev/null)[2]}
   else
     return
   fi
